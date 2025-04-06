@@ -39,6 +39,7 @@ environmental and sedimentary influences using remote sensing technologies.
 2) Identify which abiotic and biotic mudflat features drive shorebird foraging preference.
    
 Bibliography:
+
 Beninger, P. G. (Ed.). (2018). Mudflat Ecology (Vol. 7). Springer International Publishing. https://doi.
 org/10.1007/978-3-319-99194-8
 
