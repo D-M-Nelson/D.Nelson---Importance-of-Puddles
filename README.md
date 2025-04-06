@@ -33,10 +33,9 @@ diverse food resources (like MPB) than mudflats without and thereby host a great
 species. I hypothesize that small shorebirds known to forage on MPB will have longer foraging occupation
 times in areas of mudflat with greater MPB density.
 
-Specific Aims:
-1) Characterize the abiotic and biotic variation across two San Francisco bay mudflats under varying
-environmental and sedimentary influences using remote sensing technologies.
-2) Identify which abiotic and biotic mudflat features drive shorebird foraging preference.
+Specific Aim:
+
+1) Identify which abiotic and biotic mudflat features drive shorebird foraging preference.
    
 Bibliography:
 
