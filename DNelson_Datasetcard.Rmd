@@ -1,0 +1,142 @@
+---
+title: "D.Nelson Dataset card"
+author: "David Nelson"
+date: "2025-04-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Dataset Summary 
+
+This dataset contains shorebird foraging durations in relation to common mudflat habitat characteristics. It links features of the surrounding environment with the time shorebirds spend foraging.
+
+## Languages 
+
+English 
+
+## Data Instances 
+
+A typical data point comprises of the specimen and focal video metadata information for a single foraging shorebird during a given 3 minute focal observation.
+
+An example from the dataset looks as follows:
+
+```json
+{
+  'FocalID': '2025.04.24_AB_01',
+  'Subject_ID': 'WESA_01',
+  'year': '2025',
+  'month': '4',
+  'day': '27',
+  'survey_area': 'Albany Bulb',
+  'guild': "small",
+  'bbl_code': "WESA",
+  'species': 'Calidris mauri',
+  'time_sec': '62',
+  'biofilm': 'high',
+  'elevation': '2.45',
+  'TPI': '0.1',
+  'notes': 'began roosting partway through focal'
+}
+```
+
+## Data Fields 
+
+FocalID: identification number associated with the original focal video recording
+
+Subject_ID: identification number associated with a particular individual shorebird from the focal video recording
+
+year: numeric year when sample was collected
+
+month: numeric month when sample was collected
+
+day: numeric day when sample was collected
+
+survey_area: location of focal video recording either "Albany Bulb" or "Emeryville Crescent"
+
+guild: shorebird foraging guild, large, medium and small.
+
+bbl_code: birdbanding lab 4 letter code based off of it's common name
+
+species: shorebird species name
+
+time_sec: duration in seconds
+
+biofilm: biofilm coverage classification (High, medium, low)
+
+elevation: elevation in feet relative to Mean Low Low water
+
+TPI: Topographic position index value ranging from 0.1 to -0.3.
+
+notes: field notes to describe data 
+
+
+## Initial Data Collection 
+
+Flight imagery at each study area was collected within 2 hours of solar noon, under similar meteorological and tidal conditions. The drone was flown at 70 m (230 ft) to ensure fine-scale precision, minimize avian disturbance, and maintain high image resolution. Flights were conducted between April 1, 2025 and May 15, 2025 and again from August 1, 2025 to September 30th to coincide with peak spring and fall shorebird migration. For spring 2025, the UAV was piloted by Dr. Jerry Davis of San Francisco State College of the Environment. I will pilot for the 2025 fall surveys once I receive my drone pilot's license after attending Dr. Davis’ course in July 2025.
+Flight plans will consist of short gridded flights along the shoreline edge, using mission planning capabilities of the DJI Pilot 2 app (DJI, 2017). All flight plans are in Class G (uncontrolled) airspace, as they are well below the normal floor of Class E airspace – 1200 feet above ground level.  
+Shorebird Focal Video -
+Before habitat imagery is collected, 3 minute stationary focal videos were recorded for a randomized subset of cells within the survey area. To streamline shorebird focal video collection, each survey area was overlayed with a grid of cells, each representing the UAVs image footprint. The UAV was programmed to fly to a randomized cell centroid and collect stationary video for 3 minutes. These videos were used to relate shorebird habitat use to MPB coverage and distinct microtopography as characterized by subsequent field sampling and habitat image analysis.
+
+Habitat Imagery -
+Multispectral imagery was collected to detect MPB patch distribution and density. The overlapping RTK adjusted RGB imagery were collected to map mudflat surface complexity. Each imagery collection consisted of multiple flights (approximately 4 to 8), each lasting 5 to 10 minutes.
+
+Fine-scale Digital Elevation Models (DEM)
+Fine-scale digital elevation models were generated using photogrammetric methods via overlapping RGB imagery. Further texture analysis was accomplished by computing the topographic position index (TPI) for all survey areas using methodology as described by Wilson & Gallant, 2000 (Cook & Dietze, 2019).
+
+MPB Coverage Maps 
+MPB coverage maps were created using the multispectral imagery to calculate the normalized difference vegetation index (NDVI) within ArcGIS Pro raster analysis tool (Tucker, 1979). The processed MPB Chla scrapes were used to calibrate and ground truth the corresponding reflectance signatures from the processed imagery.
+
+Shorebird Habitat Use
+Individual shorebird identification and geolocation will be determined using the machine learning avian detection model Faster Region-based Convolutional Neural Network (R-CNN) (Girshick 2015). I chose this model over similar alternatives because it has been shown to have an average precision value as high as 95.44% (Hong et al., 2019). Once birds are identified and geolocated I will link their positions and occupation times to the corresponding habitat characteristics derived from the habitat imagery analysis.
+
+ 
+## Who are the source language producers? 
+
+David Nelson (Masters student with the San Francisco Bay National Estuarine Research Reserve)
+
+## Annotation process 
+
+This data was transcribe using a combination of human labor and machine learning technology.
+
+## Who are the annotators? 
+
+David Nelson, Masters Student at SF state university
+
+## Personal and Sensitive Information 
+
+The data set does not contain PII
+
+## Social Impact of Dataset 
+
+Insights provided by this dataset may help land managers focus conservation efforts on specific mudflat types and may inspire habitat modification strategies to create or encourage microtopography that enhances shorebird resilience to climate change. By utilizing emerging technologies to streamline data collection and analysis, this project will highlight the possible value of subdividing our broadly defined “mudflat” land use category into different typologies defined by their microtopography and microphytobenthos assemblages. 
+
+## Discussion of Biases 
+
+It is possible that the presence of the drone hovering over the birds had an affect on their foraging behavior.
+
+## Other Known Limitations 
+
+Species identifications may be inaccurate due to limitations of the machine learning model. This will likely affect the small shorebird foraging guild the most due to their size. 
+
+Image resolution may limit the accuracy of habitat features and foraging preference. 
+
+
+## Dataset Curators 
+
+David Nelson (Masters student with the San Francisco Bay National Estuarine Research Reserve) is the main contact person for the dataset. 
+
+## Licensing Information 
+
+TBD
+
+## Citation Information 
+
+TBD
+
+
+## Contributions 
+
+Thanks to Biometry for making this github a reality.
